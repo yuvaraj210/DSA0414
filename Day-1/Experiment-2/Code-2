@@ -1,0 +1,9 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data = pd.read_csv("Lab-2-Dataset.csv")
+plt.figure()
+plt.scatter(data["Month"], data["Rainfall"])
+plt.xlabel("Months")
+plt.ylabel("Rainfall (mm)")
+plt.title("Monthly Rainfall Data")
+plt.show()
