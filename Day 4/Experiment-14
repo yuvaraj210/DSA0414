@@ -1,0 +1,5 @@
+import pandas as pd
+df = pd.read_csv("customer_sales.csv")
+age_freq = df["age"].value_counts().sort_index()
+print("Age Frequency Distribution:\n")
+print(age_freq)

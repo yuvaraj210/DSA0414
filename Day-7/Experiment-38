@@ -1,0 +1,10 @@
+import pandas as pd
+
+df = pd.read_csv("city_temp.csv")
+
+print("Mean:\n", df.groupby("city")["temp"].mean())
+print("Std:\n", df.groupby("city")["temp"].std())
+
+range_city = df.groupby("city")["temp"].max() - df.groupby("city")["temp"].min()
+print("Highest Range City:", range_city.idxmax())
+print("Most Consistent City:", df.groupby("city")["temp"].std().idxmin())

@@ -1,0 +1,8 @@
+import pandas as pd
+property_data = pd.read_csv("properties.csv")
+avg_price_location = property_data.groupby("location")["price"].mean()
+print("Average price by location:\n", avg_price_location)
+large_houses = property_data[property_data["bedrooms"] > 4].shape[0]
+print("\nProperties with more than 4 bedrooms:", large_houses)
+largest_property = property_data.loc[property_data["area_sqft"].idxmax()]
+print("\nProperty with largest area:\n", largest_property)

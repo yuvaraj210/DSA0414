@@ -1,0 +1,9 @@
+import pandas as pd
+order_data = pd.read_csv("orders.csv")
+top_products = (
+    order_data.groupby("product")["quantity"]
+    .sum()
+    .sort_values(ascending=False)
+    .head(5)
+)
+print("Top 5 most sold products:\n", top_products)

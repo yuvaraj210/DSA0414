@@ -1,0 +1,5 @@
+import pandas as pd
+likes_data = pd.read_csv("social_media_likes.csv")
+likes_freq = likes_data["likes"].value_counts().sort_index()
+print("Likes Frequency Distribution:\n")
+print(likes_freq)

@@ -1,0 +1,11 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("study.csv")
+
+print("Correlation:", df.corr())
+
+plt.scatter(df["study_time"],df["score"])
+plt.xlabel("Study Time")
+plt.ylabel("Score")
+plt.show()

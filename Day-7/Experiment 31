@@ -1,0 +1,16 @@
+import pandas as pd
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("customers.csv")
+
+X = df[["annual_spend","visits_per_month","avg_browsing_time"]]
+
+kmeans = KMeans(n_clusters=3)
+df["Cluster"] = kmeans.fit_predict(X)
+
+plt.scatter(df["annual_spend"], df["visits_per_month"], c=df["Cluster"])
+plt.xlabel("Spend")
+plt.ylabel("Visits")
+plt.title("Customer Segments")
+plt.show()

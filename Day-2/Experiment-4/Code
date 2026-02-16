@@ -1,0 +1,14 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df = pd.read_csv("Lab-4-Dataset.csv")
+sales_data = df["sales"].to_numpy()
+total_sales = np.sum(sales_data)
+percent_increase = ((sales_data[-1] - sales_data[0]) / sales_data[0]) * 100
+print("Total yearly sales:", total_sales)
+print("Percentage increase Q1 → Q4: {:.2f}%".format(percent_increase))
+plt.plot(df["quarter"], sales_data, marker='o')
+plt.xlabel("Quarter")
+plt.ylabel("Sales")
+plt.title("Quarterly Sales Performance")
+plt.show()

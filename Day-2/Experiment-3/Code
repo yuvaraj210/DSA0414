@@ -1,0 +1,13 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df = pd.read_csv("Lab-3-Dataset.csv")
+house_data = df.to_numpy()
+filtered_prices = house_data[house_data[:, 0] > 4][:, 2]
+avg_price = np.mean(filtered_prices)
+print("Average sale price (bedrooms > 4):", avg_price)
+plt.scatter(df["bedrooms"], df["sale_price"])
+plt.xlabel("Number of Bedrooms")
+plt.ylabel("Sale Price")
+plt.title("Bedrooms vs Sale Price")
+plt.show()

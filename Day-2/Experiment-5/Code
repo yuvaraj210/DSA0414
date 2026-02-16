@@ -1,0 +1,14 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df = pd.read_csv("fuel_efficiency.csv")
+fuel_data = df["mpg"].to_numpy()
+avg_mpg = np.mean(fuel_data)
+percent_improvement = ((fuel_data[-1] - fuel_data[0]) / fuel_data[0]) * 100
+print("Average fuel efficiency:", avg_mpg)
+print("Fuel efficiency improvement: {:.2f}%".format(percent_improvement))
+plt.bar(df["model"], fuel_data)
+plt.xlabel("Car Model")
+plt.ylabel("Miles Per Gallon (MPG)")
+plt.title("Fuel Efficiency by Model")
+plt.show()

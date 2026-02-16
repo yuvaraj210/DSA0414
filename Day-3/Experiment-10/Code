@@ -1,0 +1,9 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data = pd.read_csv("monthly_sales.csv")
+plt.plot(data["month"], data["sales"], marker='o')
+plt.title("Monthly Sales Trend")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.grid(True)
+plt.show()

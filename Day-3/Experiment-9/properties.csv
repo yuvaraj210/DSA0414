@@ -1,0 +1,6 @@
+property_id,location,bedrooms,area_sqft,price
+P1,Downtown,3,1800,350000
+P2,Suburb,5,3000,500000
+P3,Downtown,2,1200,250000
+P4,Suburb,4,2200,400000
+P5,CityCenter,6,3500,650000

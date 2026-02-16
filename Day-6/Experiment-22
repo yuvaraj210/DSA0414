@@ -1,0 +1,10 @@
+import pandas as pd
+import numpy as np
+from scipy import stats
+df = pd.read_csv("customer_reviews.csv")
+ratings = df["rating"]
+mean = np.mean(ratings)
+sem = stats.sem(ratings)
+ci = stats.t.interval(0.95, len(ratings)-1, loc=mean, scale=sem)
+print("Mean:", mean)
+print("95%

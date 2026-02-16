@@ -1,0 +1,16 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("players.csv")
+
+print("Top 5 Goals:\n", df.nlargest(5,"goals"))
+print("Top 5 Salaries:\n", df.nlargest(5,"salary"))
+
+avg_age = df["age"].mean()
+print("Average Age:", avg_age)
+
+print("Above Avg Age:\n", df[df["age"]>avg_age]["name"])
+
+df["position"].value_counts().plot(kind="bar")
+plt.title("Players by Position")
+plt.show()

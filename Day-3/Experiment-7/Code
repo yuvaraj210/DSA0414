@@ -1,0 +1,12 @@
+import pandas as pd
+order_data = pd.read_csv("orders.csv", parse_dates=["order_date"])
+print("Orders Dataset:\n")
+print(order_data)
+orders_per_customer = order_data.groupby("customer_id").size()
+avg_quantity_per_product = order_data.groupby("product")["quantity"].mean()
+earliest_date = order_data["order_date"].min()
+latest_date = order_data["order_date"].max()
+print("\nTotal Orders Per Customer:\n", orders_per_customer)
+print("\nAverage Order Quantity Per Product:\n", avg_quantity_per_product)
+print("\nEarliest Order Date:", earliest_date)
+print("Latest Order Date:", latest_date)

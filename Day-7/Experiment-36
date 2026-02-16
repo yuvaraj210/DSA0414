@@ -1,0 +1,6 @@
+import pandas as pd
+
+df = pd.read_csv("stocks.csv")
+
+print("Variance:", df["close_price"].var())
+print("Std Dev:", df["close_price"].std())

@@ -1,0 +1,4 @@
+from sklearn.tree import DecisionTreeRegressor
+model = DecisionTreeRegressor()
+model.fit(X_train, y_train)
+print(model.predict([[mileage, age]]))

@@ -1,0 +1,7 @@
+from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+iris = load_iris()
+model = DecisionTreeClassifier()
+model.fit(iris.data, iris.target)
+new = [[5.1,3.5,1.4,0.2]]
+print(model.predict(new))

@@ -1,0 +1,4 @@
+from sklearn.cluster import KMeans
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(X)
+print(kmeans.predict([[new_features]]))
